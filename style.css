@@ -1,3 +1,18 @@
-h1 {
-    background-color: aqua;
+:root {
+    --square-size : 50px;
+    --gap: 5px;
+}
+.container {
+    width: calc((var(--square-size) + var(--gap)) * 16);
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap)
+}
+
+.square{
+    width: var(--square-size);
+    color: black;
+
+    background-color: bisque;
 }
