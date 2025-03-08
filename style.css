@@ -1,17 +1,52 @@
 :root {
-    --square-size : 50px;
+    --square-size : 40px;
     --gap: 5px;
+    --container-size: 960px;
 }
+body {
+    height: 100vh;
+    display: flex;
+    margin: 0; /* Rimuove eventuali spazi bianchi ai bordi */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    justify-content: center; 
+    background-color: black; 
+    color: white;
+}
+
+
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #eeeeee;
+  
+  }
 .container {
-    width: calc((var(--square-size) + var(--gap)) * 16);
+    width: calc((var(--square-size) + var(--gap)) * 16); 
+/*     width: 960px; */    
     height: 640px;
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gap)
+    gap: var(--gap);
+
 }
 
 .square{
     width: var(--square-size);
+    height: var(--square-size);;
     color: black;
 
     background-color: bisque;

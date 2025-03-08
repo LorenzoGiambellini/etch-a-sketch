@@ -1,5 +1,5 @@
-const container = document.querySelector("div");
-container.className = "container"
+const container = document.querySelector(".container");
+container.className = "container";
 for(let i = 0; i<16*16; i++){
     const square = document.createElement("div");
     square.className = "square";
@@ -7,3 +7,13 @@ for(let i = 0; i<16*16; i++){
 }
 
 
+document.querySelectorAll(".square").forEach(square => {
+    square.addEventListener("mouseenter", () => {
+        square.style.backgroundColor = getRandomColor() ;
+    });
+    
+});
+
+function getRandomColor() {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}
