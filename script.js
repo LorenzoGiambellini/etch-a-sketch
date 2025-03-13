@@ -10,12 +10,19 @@ function createGrid(x){
 }
 createGrid(n);
 
-document.querySelectorAll(".square").forEach(square => {
+
+container.addEventListener("mouseover", (e) => {
+    if (e.target.classList.contains("square")) {
+        e.target.style.backgroundColor = getRandomColor();
+    }
+});
+
+
+/* document.querySelectorAll(".square").forEach(square => {
     square.addEventListener("mouseenter", () => {
         square.style.backgroundColor = getRandomColor() ;
-    });
-    
-});
+    }); 
+}); */
 
 function getRandomColor() {
     return "#" + Math.floor(Math.random() * 16777215).toString(16);
