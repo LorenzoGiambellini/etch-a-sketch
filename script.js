@@ -29,8 +29,13 @@ const sizeBtn = document.querySelector(".size-btn");
 
 let squareSize;
 sizeBtn.addEventListener("click", ()=> {
-    n = prompt("insert a number");
-    squareSize = (containerSize - (n -1) * gap) / n;
+    n = prompt("insert a positive number less than 50");
+    if (n > 50 || n < 0 || isNaN(n)) {
+        alert("ERROR");
+        return;
+    }
+    n = parseInt(n);
+    squareSize = (containerSize - (n - 1) * gap) / n;
     document.documentElement.style.setProperty("--square-size", `${squareSize}px`);
     resize(n);
 });
