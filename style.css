@@ -30,8 +30,9 @@ body {
 
 .footer{
     display: flex;
-    padding: 20px;
+    padding: 10px;
     background-color: #eeeeee;
+    justify-content: center;
   
   }
 .container {
