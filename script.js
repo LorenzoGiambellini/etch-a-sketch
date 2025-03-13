@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 container.className = "container";
-let squareSize = 16;
+let n = 16;
 function createGrid(x){
     for(let i = 0; i<x*x; i++){
         let square = document.createElement("div");
@@ -8,7 +8,7 @@ function createGrid(x){
         container.appendChild(square);
     } 
 }
-createGrid(squareSize);
+createGrid(n);
 
 document.querySelectorAll(".square").forEach(square => {
     square.addEventListener("mouseenter", () => {
@@ -22,9 +22,13 @@ function getRandomColor() {
 }
 const sizeBtn = document.querySelector(".size-btn");
 const containerSize = 960;
+const gap = 5;
+
+let squareSize;
 sizeBtn.addEventListener("click", ()=> {
-    let n = prompt("insert a number");
-    document.documentElement.style.setProperty("--square-size", `${containerSize / n}px`);
+    n = prompt("insert a number");
+    squareSize = (containerSize - (n -1) * gap) / n;
+    document.documentElement.style.setProperty("--square-size", `${squareSize}px`);
     resize(n);
 });
 function resize(x) {
