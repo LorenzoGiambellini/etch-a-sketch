@@ -48,3 +48,9 @@ body {
     color: black;
     background-color: bisque;
 }
+
+button {
+    width: 200px;
+    height: 40px;
+    margin: 30px;
+}

@@ -1,6 +1,10 @@
 const container = document.querySelector(".container");
 container.className = "container";
+
 let n = 16;
+const containerSize = 960;
+const gap = 5;
+
 function createGrid(x){
     for(let i = 0; i<x*x; i++){
         let square = document.createElement("div");
@@ -18,18 +22,10 @@ container.addEventListener("mouseover", (e) => {
 });
 
 
-/* document.querySelectorAll(".square").forEach(square => {
-    square.addEventListener("mouseenter", () => {
-        square.style.backgroundColor = getRandomColor() ;
-    }); 
-}); */
-
 function getRandomColor() {
     return "#" + Math.floor(Math.random() * 16777215).toString(16);
 }
 const sizeBtn = document.querySelector(".size-btn");
-const containerSize = 960;
-const gap = 5;
 
 let squareSize;
 sizeBtn.addEventListener("click", ()=> {
@@ -42,3 +38,10 @@ function resize(x) {
     container.innerHTML = ""; // Svuota il contenitore prima di ricreare la griglia
     createGrid(x);
 }
+
+const clearBtn = document.querySelector(".clear-btn");
+clearBtn.addEventListener("click", ()=> {
+    document.querySelectorAll(".square").forEach(square => {
+        square.style.backgroundColor = "bisque";
+    });
+});
